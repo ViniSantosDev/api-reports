@@ -1,18 +1,23 @@
 package com.vinisantosdev.apireports.apireports.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.*;
 
+import javax.persistence.*;
+
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "tabela1")
 public class ReturnData1 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "titular")
     private String titular;
 
-    @Column
+    @Column(name = "conta")
     private String conta;
 }

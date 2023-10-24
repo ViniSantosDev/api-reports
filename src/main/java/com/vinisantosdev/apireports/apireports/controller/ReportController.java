@@ -21,8 +21,26 @@ public class ReportController {
 
 
     @GetMapping("/{operation_id}/report")
-    public ResponseEntity<byte[]> reportData(@PathVariable Long account) throws IOException {
-        byte[] pdfContent = service.generatePDF();
+    public ResponseEntity<byte[]> reportData1(@PathVariable Long account) throws IOException {
+        byte[] pdfContent = service.generatePDFLayout1();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("attachment", "example.pdf");
+        return ResponseEntity.ok().headers(headers).body(pdfContent);
+    }
+
+    @GetMapping("/report")
+    public ResponseEntity<byte[]> layout() throws IOException {
+        byte[] pdfContent = service.generatePDFLayout1();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_PDF);
+        headers.setContentDispositionFormData("attachment", "example.pdf");
+        return ResponseEntity.ok().headers(headers).body(pdfContent);
+    }
+
+    @GetMapping("/{operation_id}/report2")
+    public ResponseEntity<byte[]> reportData2(@PathVariable Long account) throws IOException {
+        byte[] pdfContent = service.generatePDFLayout2();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDispositionFormData("attachment", "example.pdf");
