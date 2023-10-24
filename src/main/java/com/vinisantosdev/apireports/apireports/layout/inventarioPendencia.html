@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1 {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    p span {
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        border: 3px solid;
+        border-spacing: 0;
+        /* Removes the cell spacing via CSS */
+        border-collapse: collapse;
+    }
+
+    th {
+        border-bottom: 1px solid;
+        padding: 10px 0;
+    }
+
+    td {
+        text-align: center;
+        border-bottom: 1px solid;
+        padding: 10px 0;
+    }
+
+    .division {
+        border-right: 1px solid;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .logo-wrapper img {
+        width: 250px;
+    }
+
+    .title-wrapper,
+    .date-wrapper,
+    .logo-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title-wrapper h2 {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .title-wrapper {
+        margin-right: 100px;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+
+    .info-wrapper {
+        border: 3px solid;
+        margin: 15px 0;
+    }
+
+    .info-wrapper .top-wrapper {
+        padding: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid;
+    }
+
+    .info-wrapper .bottom-wrapper {
+        padding: 20px;
+        padding-bottom: 10px;
+    }
+
+    .info-wrapper p {
+        margin-bottom: 10px;
+    }
+
+    .title {
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+    .table-division {
+        border-left: 1px solid;
+        border-right: 1px solid;
+    }
+
+    .content-table th {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .content-table td {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .content,
+    .second-content {
+        margin-top: 40px;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .second-content table {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .second-content table th {
+        border: none;
+    }
+
+    .second-content table td {
+        border: none;
+    }
+
+    .second-content .border-top {
+        border-top: 1px solid;
+    }
+</style>
+
+<body>
+<div class="header">
+    <div class="logo-wrapper">
+        <img src="logo.png" alt="Grupo Santander">
+    </div>
+    <div class="title-wrapper">
+        <h1>
+            JJ - Sistema de Conciliação de Contas
+        </h1>
+        <h2>
+            INVENTÁRIO DE PENDÊNCIAS
+        </h2>
+    </div>
+    <div class="date-wrapper">
+        <p>
+            <span>Data:</span> 08/05/2023
+        </p>
+        <p>
+            <span>Hora:</span> 09:12
+        </p>
+        <p>
+            <span>Pg:</span> 1
+        </p>
+    </div>
+</div>
+
+<section class="content">
+    <div class="container">
+        <p><span>Data base:</span> 28/04/2023</p>
+
+        <div class="info-wrapper">
+            <div class="top-wrapper">
+                <p>
+                    <span>Titular:</span> {$titular}
+                </p>
+                <p>
+                    <span>Agente:</span> {$agente}
+                </p>
+            </div>
+            <div class="bottom-wrapper">
+                <p>
+                    <span>Conta Corrente:</span> {$contaNR}
+                </p>
+                <p>
+                    <span>Moeda:</span> {$moeda}
+                </p>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <tr>
+                    <th>Referência</th>
+                    <th class="division">{$complementar}</th>
+                    <th>Dt.Envi</th>
+                    <th>Contábil Dt.Pend</th>
+                    <th class="division">Valor</th>
+                    <th>Dt.Envi</th>
+                    <th>Extrato Dt.Pend</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>PZ&4762023-03-2706451</td>
+                    <td>TED RECEBIDA</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>22,728.82</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>7.006,63</td>
+                </tr>
+                <tr>
+                    <td>PZ&4762023-03-2706451</td>
+                    <td>TED RECEBIDA</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>22,728.82</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>7.006,63</td>
+                </tr>
+                <tr>
+                    <td>PZ&4762023-03-2706451</td>
+                    <td>TED RECEBIDA</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>22,728.82</td>
+                    <td>27/04/2023</td>
+                    <td>27/04/2023</td>
+                    <td>7.006,63</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content">
+            <h1 class="title">
+                Quadro Resumo
+            </h1>
+            <div class="content-table">
+                <table>
+                    <tr>
+                        <th colspan="2" class="align-right">Valor</th>
+                        <th class="table-division">Quantidade</th>
+                        <th colspan="2" class="align-right">Valor</th>
+                        <th class="table-division">Quantidade</th>
+                    </tr>
+                    <tr>
+                        <td>Saldo Agente Credor:</td>
+                        <td class="align-right">2000</td>
+                        <td class="align-right table-division">10</td>
+                        <td>Saldo Agente Devedor :</td>
+                        <td class="align-right">10000</td>
+                        <td class="align-right table-division">1</td>
+                    </tr>
+                    <tr>
+                        <td>Saldo Contábil Credor :</td>
+                        <td class="align-right">2000</td>
+                        <td class="align-right table-division">10</td>
+                        <td>Saldo Contábil Devedor :</td>
+                        <td class="align-right">10000</td>
+                        <td class="align-right table-division">1</td>
+                    </tr>
+                    <tr>
+                        <td>Deb.Contábil não Corresp.:</td>
+                        <td class="align-right">2000</td>
+                        <td class="align-right table-division">10</td>
+                        <td>Cred.Contábil não Corresp.:</td>
+                        <td class="align-right">10000</td>
+                        <td class="align-right table-division">1</td>
+                    </tr>
+                    <tr>
+                        <td>Deb.Extrato não Corresp.:</td>
+                        <td class="align-right">2000</td>
+                        <td class="align-right table-division">10</td>
+                        <td>Cred.Extrato não Corresp.:</td>
+                        <td class="align-right">10000</td>
+                        <td class="align-right table-division">1</td>
+                    </tr>
+                    <tr>
+                        <td class="bold">TOTAL:</td>
+                        <td class="align-right bold">-5,149,015.18</td>
+                        <td class="align-right table-division"></td>
+                        <td class="bold">TOTAL:</td>
+                        <td class="align-right bold">5,149,015.18</td>
+                        <td class="align-right table-division"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="align-right"></td>
+                        <td class="division"></td>
+                        <th rowspan="2" class="bold">Diferença:</th>
+                        <th rowspan="2" class="align-right division">0</th>
+                        <td class="bold">Total Geral</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="division"></td>
+                        <td class="align-right bold">5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="second-content">
+            <h1 class="title">
+                Quadro Resumo Geral de Pendências
+            </h1>
+            <div class="content-table">
+                <table>
+                    <tr>
+                        <th>Deb.Contábil não Corresp.:</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th>Cred.Contábil não Corresp.:</th>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th>Deb.Extrato não Corresp.:</th>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th>Cred.Extrato não Corresp.:</th>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <th class="border-top">Total Geral de Pendências:</th>
+                        <td class="bold border-top">5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
+</html>
