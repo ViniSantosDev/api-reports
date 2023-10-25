@@ -20,9 +20,9 @@ public class LayoutPDF1 {
             "<html lang=\"en\">\n" +
             "\n" +
             "<head>\n" +
-            "  <meta charset=\"UTF-8\">\n" +
-            "  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n" +
-            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+            "  <meta charset=\"UTF-8\"/>\n" +
+            "  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>\n" +
+            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n" +
             "  <title>Document</title>\n" +
             "</head>\n" +
             "<style>\n" +
@@ -48,7 +48,6 @@ public class LayoutPDF1 {
             "        width: 100%;\n" +
             "        border: 3px solid;\n" +
             "        border-spacing: 0;\n" +
-            "        /* Removes the cell spacing via CSS */\n" +
             "        border-collapse: collapse;\n" +
             "    }\n" +
             "\n" +
@@ -189,7 +188,7 @@ public class LayoutPDF1 {
             "<body>\n" +
             "<div class=\"header\">\n" +
             "  <div class=\"logo-wrapper\">\n" +
-            "    <img src=\"logo.png\" alt=\"Grupo Santander\">\n" +
+            "    <img src=\"logo.png\" alt=\"Grupo Santander\"/> \n" +
             "  </div>\n" +
             "  <div class=\"title-wrapper\">\n" +
             "    <h1>\n" +
@@ -452,9 +451,6 @@ public class LayoutPDF1 {
             "            <td class=\"table-division\">36,539.18</td>\n" +
             "          </tr>\n" +
             "          <tr class=\"total-row\">\n" +
-            "            <td colspan=\"3\" class=\"initial\"></td>\n" +
-            "            <td colspan=\"3\" class=\"initial\"></td>\n" +
-            "            <td colspan=\"3\" class=\"initial\"></td>\n" +
             "            <td class=\"table-division\">244,460.38</td>\n" +
             "            <td class=\"table-division\">-244,091.29</td>\n" +
             "            <td class=\"table-division\">-539,336.93</td>\n" +
@@ -477,7 +473,7 @@ public class LayoutPDF1 {
 
         data.stream().forEach(d -> {
             htmlBody = htmlBody + "${titular}";
-            htmlBody = htmlBody.replace("{$titular}", d.getTitular());
+            htmlBody = htmlBody.replace("${titular}", d.getTitular());
             log.info(htmlBody.toString());
         });
     }
@@ -529,8 +525,6 @@ public class LayoutPDF1 {
             e.printStackTrace();
         }
         return null;
-
-
     }
 
 }
